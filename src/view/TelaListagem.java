@@ -1,13 +1,15 @@
 package view;
 
+import modelo.Produto;
 import modelo.ProdutoDao;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class TelaListagem extends JFrame {
-    public TelaListagem() {
-        ProdutoDao.getInstance();
+    private final ProdutoDao produtoDao = ProdutoDao.getInstance();
 
+    public TelaListagem() {
         this.initialize();
         this.setExtendedState(JFrame.NORMAL);
     }
@@ -44,6 +46,13 @@ public class TelaListagem extends JFrame {
         JMenuItem menuNovo = new JMenuItem("Novo");
         JMenuItem menuSair = new JMenuItem("Sair");
 
+        JList<Produto> lista = new JList<>();
+        lista.setBounds(10, 40, 550, 250);
+        lista.setModel(produtoDao.listar());
+
+        JScrollPane scroll = new JScrollPane(lista);
+        scroll.setBounds(10, 40, 550, 250);
+
         menuArquivo.add(menuNovo);
         menuArquivo.addSeparator();
         menuArquivo.add(menuSair);
@@ -55,6 +64,7 @@ public class TelaListagem extends JFrame {
         painelBotoes.add(btnSair);
 
         painel.add(lblTitulo);
+        painel.add(scroll, BorderLayout.CENTER);
 
         this.add(painel);
         this.add(painelBotoes);

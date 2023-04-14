@@ -17,8 +17,8 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Código: " + this.codigo + " | modelo.Produto: " + this.nome + " | Preço: " +
-                NumberFormat.getCurrencyInstance().format(this.preco) + " | Quantidade: " + this.quantidade;
+        return "Código:     " + this.codigo + "     |       Nome:     " + this.nome + "     |       Preço:      " +
+                NumberFormat.getCurrencyInstance().format(this.preco) + "       |     Quantidade:     " + this.quantidade;
     }
 
     public String getCodigo() {
