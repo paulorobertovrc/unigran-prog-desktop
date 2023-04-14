@@ -1,3 +1,8 @@
+package listener;
+
+import modelo.Produto;
+import view.TelaCadastro;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,10 +32,7 @@ public class ListenerSalvar implements ActionListener {
                 Integer.parseInt(txtQuantidade.getText())
         );
 
-        JOptionPane.showMessageDialog(null,
-                produto.toString(),
-                "Produto Cadastrado",
-                JOptionPane.INFORMATION_MESSAGE);
+        TelaCadastro.exibirMensagem(produto);
     }
 
 }

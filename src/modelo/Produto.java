@@ -1,3 +1,5 @@
+package modelo;
+
 import java.text.NumberFormat;
 
 public class Produto {
@@ -15,7 +17,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Código: " + this.codigo + " | Produto: " + this.nome + " | Preço: " +
+        return "Código: " + this.codigo + " | modelo.Produto: " + this.nome + " | Preço: " +
                 NumberFormat.getCurrencyInstance().format(this.preco) + " | Quantidade: " + this.quantidade;
     }
 

@@ -1,12 +1,19 @@
+package view;
+
+import listener.ListenerSalvar;
+import modelo.Produto;
+
 import javax.swing.*;
 
-public class TelaCadastro extends JFrame {
+public class TelaCadastro extends JDialog {
     public TelaCadastro() {
-        super("Cadastro de Produto");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Cadastrar Novo Produto");
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(360, 200);
         this.setLocationRelativeTo(null);
         this.setLayout(null);
+        this.setModal(true);
+//        this.setAlwaysOnTop(true);
 
         JLabel lblCodigo = new JLabel("Código:");
         JLabel lblNome = new JLabel("Nome:");
@@ -51,14 +58,25 @@ public class TelaCadastro extends JFrame {
         btnCancelar.addActionListener(e -> {
             setVisible(false);
             dispose();
-            System.exit(0);
         });
 
         this.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new TelaCadastro();
+    public static void exibirMensagem(Produto produto) {
+        JDialog dialog = new JDialog();
+        JOptionPane pane = new JOptionPane(
+                produto.toString(),
+                JOptionPane.INFORMATION_MESSAGE
+        );
+
+        dialog.setContentPane(pane);
+        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        dialog.setModal(true);
+        dialog.setAlwaysOnTop(true);
+        dialog.pack();
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
     }
 
 }
