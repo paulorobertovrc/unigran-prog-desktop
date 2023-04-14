@@ -1,7 +1,5 @@
 import javax.swing.*;
 
-// Implementação da interface gráfica para cadastro de um objeto Produto.
-
 public class TelaCadastro extends JFrame {
     public TelaCadastro() {
         super("Cadastro de Produto");
@@ -48,6 +46,13 @@ public class TelaCadastro extends JFrame {
 
         this.add(btnCadastrar);
         this.add(btnCancelar);
+
+        btnCadastrar.addActionListener(new ListenerSalvar(txtCodigo, txtNome, txtPreco, txtQuantidade));
+        btnCancelar.addActionListener(e -> {
+            setVisible(false);
+            dispose();
+            System.exit(0);
+        });
 
         this.setVisible(true);
     }

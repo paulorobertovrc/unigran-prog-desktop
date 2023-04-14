@@ -8,6 +8,11 @@ public class Principal {
 
         Produto produto = new Produto(
             JOptionPane.showInputDialog(null,
+                    "Código do produto: ",
+                    "Cadastro de Produto",
+                    JOptionPane.QUESTION_MESSAGE),
+
+            JOptionPane.showInputDialog(null,
                     "Nome do produto: ",
                     "Cadastro de Produto",
                     JOptionPane.QUESTION_MESSAGE),
