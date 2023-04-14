@@ -1,9 +1,13 @@
 package view;
 
+import modelo.ProdutoDao;
+
 import javax.swing.*;
 
 public class TelaListagem extends JFrame {
     public TelaListagem() {
+        ProdutoDao.getInstance();
+
         this.initialize();
         this.setExtendedState(JFrame.NORMAL);
     }

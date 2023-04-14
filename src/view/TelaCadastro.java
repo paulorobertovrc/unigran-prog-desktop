@@ -13,7 +13,6 @@ public class TelaCadastro extends JDialog {
         this.setLocationRelativeTo(null);
         this.setLayout(null);
         this.setModal(true);
-//        this.setAlwaysOnTop(true);
 
         JLabel lblCodigo = new JLabel("Código:");
         JLabel lblNome = new JLabel("Nome:");
@@ -70,8 +69,8 @@ public class TelaCadastro extends JDialog {
                 JOptionPane.INFORMATION_MESSAGE
         );
 
+        dialog.setTitle("Produto cadastrado com sucesso");
         dialog.setContentPane(pane);
-        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
         dialog.setAlwaysOnTop(true);
         dialog.pack();

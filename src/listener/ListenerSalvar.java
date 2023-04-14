@@ -1,6 +1,7 @@
 package listener;
 
 import modelo.Produto;
+import modelo.ProdutoDao;
 import view.TelaCadastro;
 
 import javax.swing.*;
@@ -32,6 +33,7 @@ public class ListenerSalvar implements ActionListener {
                 Integer.parseInt(txtQuantidade.getText())
         );
 
+        ProdutoDao.getInstance().inserir(produto);
         TelaCadastro.exibirMensagem(produto);
     }
 

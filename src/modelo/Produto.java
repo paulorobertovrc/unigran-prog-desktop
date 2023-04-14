@@ -21,4 +21,20 @@ public class Produto {
                 NumberFormat.getCurrencyInstance().format(this.preco) + " | Quantidade: " + this.quantidade;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
 }
